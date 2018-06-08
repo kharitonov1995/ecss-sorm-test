@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#APP_PATH=/usr/lib/ecss/ecss-sorm-test/bin/
+#APP_NAME=ecss-sorm-test
+
+APP_PATH=./release/ecss-sorm-test/bin/
+APP_NAME=ecss-sorm-test
+RELX_ARG=console
+
+function usage() {
+    echo "Usage: ecss-sorm-test -id Id -p | -password Password -ip Ip -m | -mode Mode -f | -file File -fo | -formatter"
+}
+
+# Парсим все доступные аргументы
+while [[ "$*" ]]; do
+    CMD=${1}
+    case "${CMD,,}" in
+        -id)
+            export SORM_ID=${2} ;;
+        -ip)
+            export IP=${2} ;;
+        -mode | -m)
+            if ([[ ${2} == "script" ]]) && ([[ ${3} == "-f" ]] || [[ ${3} == "-file" ]]); then
+                export MODE=${2}
+            elif [[ ${2} != "script" ]]; then
+                export MODE=${2}
+            fi ;;
+        -file | -f)
+            export FILE=${PWD}/${2} ;;
+        -password | -p)
+            export PASSWORD=${2} ;;
+        -formatter | -fo)
+            export FORMATTER="true" ;;
+    esac
+    shift 1
+done
+
+if [[ -n ${SORM_ID} ]] && \
+   [[ -n ${PASSWORD} ]] && \
+   [[ -n ${IP} ]] && \
+   [[ -n ${MODE} ]]; then
+    ${APP_PATH}/${APP_NAME} ${RELX_ARG}
+else
+    usage
+fi

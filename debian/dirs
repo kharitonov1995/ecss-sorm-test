@@ -1,0 +1,5 @@
+/var/lib/ecss/ecss-sorm-test/
+/var/log/ecss/ecss-sorm-test/
+/var/cache/ecss/ecss-sorm-test/
+
+/usr/lib/ecss/ecss-sorm-test/log

@@ -1,0 +1,6 @@
+-sname ecss_sorm_test
+
+-setcookie ecss_sorm_test
+
+-noshell
+-noinput

@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+. /usr/share/debconf/confmodule
+
+#echo "Cleanup from old release artfacts..."
+# Чистка от старых конфигов и логов
+rm -rf /var/lib/ecss/ecss-sorm-test || true
+rm -rf /var/log/ecss/ecss-sorm-test || true
+rm -rf /var/cache/ecss/ecss-sorm-test || true
+
+#DEBHELPER#
+
+exit 0

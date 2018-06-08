@@ -1,0 +1,24 @@
+Source: ecss-sorm-test-%%MAJOR_VSN%%
+Maintainer: SSW team <ssw-team@eltex-co.ru>
+Section: net
+Priority: extra
+
+Package: ecss-sorm-test-%%MAJOR_VSN%%
+Homepage: http://www.eltex-co.ru
+Architecture: amd64
+Depends: erlang-base-hipe,
+         erlang-parsetools,
+         erlang-syntax-tools,
+         erlang-asn1,
+         erlang-snmp,
+         erlang-inets,
+         erlang-eldap,
+         erlang-tools,
+         erlang-ssh,
+         erlang-os-mon,
+         erlang-snmp,
+         erlang-megaco,
+         erlang-xmerl,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Eltex/ECSS-10 Engine for SORM testing 

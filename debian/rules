@@ -1,0 +1,50 @@
+#!/usr/bin/make -f
+
+# Info:
+# https://www.debian.org/doc/manuals/maint-guide/maint-guide.ru.txt
+# https://lintian.debian.org/manual/
+# https://habrahabr.ru/post/57628/
+
+.PHONY: override_dh_installchangelogs override_dh_systemd_enable override_dh_systemd_start
+echo "rules: $1 at $(pwd)"
+export DH_VERBOSE=1
+
+%:
+	dh $@ #--with systemd,bash-completion
+
+override_dh_install:
+	dh_install \
+		--fail-missing \
+		--exclude=erl_crash \
+		--exclude=.git \
+		--exclude=.gitignore \
+		--exclude=/x32/ \
+		--exclude=/c_src/ \
+		--exclude=/src/ \
+		--exclude=/include/ \
+		--exclude=.gitignore \
+		--exclude=.src \
+		--exclude=_test.beam \
+		--exclude=_tests.beam \
+		--exclude=.erl \
+		--exclude=.hrl
+
+override_dh_installchangelogs:
+	# Autogenerate changelogs
+	dh_installchangelogs
+
+# override_dh_systemd_enable:
+# 	dh_systemd_enable
+
+# override_dh_systemd_start:
+# 	dh_systemd_start --restart-after-upgrade
+
+# override_dh_fixperms:
+# 	dh_fixperms
+# 	chmod 4755 debian/foo/usr/bin/foo
+
+# override_dh_strip:
+# 	dh_strip -Xfoo
+
+# override_dh_auto_configure:
+# 	dh_auto_configure -- --with-foo --disable-bar

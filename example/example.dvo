@@ -1,0 +1,318 @@
+[
+    {"//" : "01010 -> 01001 cfu -> 01101"},
+
+    "start-sorm ",
+
+    "wiretap-add 1 subscriber private -n 01010 statistic normal",
+    "wiretap-add 2 subscriber private -n 01001 statistic normal",
+    "wiretap-add 3 subscriber private -n 01101 statistic normal",
+
+    {
+        "calls": [
+            {
+                "call": [
+                    {
+                        "options": {
+                            "mode": "required",
+                            "timeout": "15",
+                            "repeat": "1"
+                        }
+                    },
+                    {
+                        "observer": "number_b"
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01001",
+                            "test": {
+                                "obj": "02",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "41"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01001",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "02",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "21"
+                            },
+                            "msg": "44"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "02",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "42"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "02",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "43"
+                        }
+                    }
+                ],
+                "call": [
+                    {
+                        "options": {
+                            "mode": "required",
+                            "timeout": "15",
+                            "repeat": "1"
+                        }
+                    },
+                    {
+                        "observer": "number_a"
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01001",
+                            "test": {
+                                "obj": "01",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "41"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01001",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "01",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "21"
+                            },
+                            "msg": "44"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "01",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "42"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "01",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "43"
+                        }
+                    }
+                ],
+                "call": [
+                    {
+                        "options": {
+                            "mode": "required",
+                            "timeout": "15",
+                            "repeat": "1"
+                        }
+                    },
+                    {
+                        "observer": "number_b"
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "03",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "41"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01001",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "03",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "21"
+                            },
+                            "msg": "44"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "03",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "42"
+                        }
+                    },
+                    {
+                        "recv": {
+                            "options": {
+                                "mode": "required",
+                                "timeout": "15",
+                                "repeat": "1"
+                            },
+                            "number-a": "01010",
+                            "number-b": "01101",
+                            "test": {
+                                "obj": "03",
+                                "type": "01",
+                                "ni-a": "01",
+                                "ni-b": "01",
+                                "ksl-a": "FF",
+                                "ksl-b": "FF",
+                                "priority": "02",
+                                "ss": "FF"
+                            },
+                            "msg": "43"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    "stop-sorm"
+]

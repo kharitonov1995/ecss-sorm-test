@@ -1,0 +1,128 @@
+[
+    {"//" : "№5, тип объекта-01Н"},
+    "wiretap-add 2 subscriber private -n 0724 statistic normal",
+
+    {"//" : "№5, тип объекта-02Н"},
+    "wiretap-add 3 network-full city -n 7454000 statistic normal",
+
+    {"//" : "№5, тип объекта-12Н, FH в конце №тлф"},
+    "wiretap-add 4 network-short city -n 7454000 statistic normal",
+
+    {"//" : "№5, тип объекта-03Н (для транзитного и оконечно-транзитного узла связи)"},
+    "wiretap-add 5 trunk none -t 2 statistic normal",
+
+    {"//" : "№5, тип объекта-03Н (для оконечного узла связи)"},
+    "wiretap-add 5 trunk private -t 2 statistic normal",
+
+    {"//" : "№5, признак номера-07Н"},
+    "wiretap-add 5 subscriber 7 -n 0724 statistic normal",
+
+    {"//" : "№5, условный № занят, тип объекта-01Н"},
+    "wiretap-add 2 subscriber private -n 0725 statistic normal",
+
+    {"//" : "№5, условный № занят, тип объекта-02Н"},
+    "wiretap-add 3 network-full city -n 7454000 statistic normal",
+
+    {"//" : "№5, тип объекта-02Н, постановка осуществляется с индексом выхода на местную"},
+    "wiretap-add 6 network-full local -n 7454000 statistic normal",
+
+    {"//" : "№5, тип объекта-02Н, постановка осуществляется с индексом выхода на местную и междугороднюю сети ????"},
+    
+
+    {"//" : "№5, тип объекта-02Н, постановка осуществляется с индексом выхода на местную, междугороднюю и международную сеть ????"},
+    
+
+    {"//" : "№5, тип объекта-12Н, постановка осуществляется с индексом выхода на местную сеть"},
+    "wiretap-add 6 network-short local -n 7454000 statistic normal",
+
+    {"//" : "№5, тип объекта-12Н, постановка осуществляется с индексом выхода на местную и междугороднюю сети ????"},
+    
+
+    {"//" : "№5, тип объекта-12Н, постановка осуществляется с индексом выхода на местную, междугороднюю и международную сеть ????"},
+
+
+    {"//" : "№5, условный № занят, тип объекта-03Н"},
+    "wiretap-add 2 trunk none -t d statistic normal",
+
+    {"//" : "№5, №тлф уже стоит на контроле с другим условным номером"},
+    "wiretap-add 6 subscriber private -n 0724 statistic normal",
+
+    {"//" : "№5, №пучка уже стоит на контроле с другим условным номером"},
+    "wiretap-add 7 trunk none -t 2 statistic normal",
+
+    {"//" : "№5, указан № телефона и №пучка"},
+    "wiretap-add 8 subscriber private -n 0724 -t 2 statistic normal",
+
+    {"//" : "№5, №гр. не соответствует категории контроля"},
+    "set-ksl 2 separated 0 1 0 2",
+    "wiretap-add 8 subscriber private -n 0724 combined 2 normal",
+
+    {"//" : "№5, не созданный №группы"},
+    "wiretap-add 8 subscriber private -n 0724 combined 3 normal",
+
+    {"//" : "№5, кол-во знаков №тлф не соответствует указанному в 5 байте"},
+    "wiretap-add 8 subscriber private -n 0725f statistic normal",
+
+    {"//" : "№5, тип объекта не соответствует  №тлф"},
+    "wiretap-add 8 subscriber city -n 7454000 statistic normal",
+
+    {"//" : "№5, неопределенный в ТТ к каналам тип объекта"},
+    "wiretap-add 8 4 private -n 0724 statistic normal",
+
+    {"//" : "№5, неопределенный в ТТ к каналам признак № тлф"},
+    "wiretap-add 8 subscriber 8 -n 0724 statistic normal",
+
+    {"//" : "№5, неопределенная в ТТ к каналам категория контроля"},
+    "wiretap-add 8 subscriber private -n 0724 5 1 normal",
+
+    {"//" : "№5, неопределенный в ТТ к каналам №группы"},
+    "wiretap-add 8 subscriber private -n 0724 combined 1000000 normal",
+    
+    {"//" : "№5, неопределенная в ТТ к каналам метка приоритета"},
+    "wiretap-add 8 subscriber private -n 0724 statistic 4",
+
+    {"//" : "№5, во время разговора абонента с категорией статистического контроля"},
+
+
+    {"//" : "№5, во время разговора абонента с категорией статистического контроля"},
+
+
+    {"//" : "№5, категория – статистический контроль, метка приоритета=01Н"},
+    "wiretap-add 9 subscriber private -n 0724 statistic high",
+
+    {"//" : "№5, категория – статистический контроль, метка приоритета=02Н"},
+    "wiretap-add 9 subscriber private -n 0724 statistic normal",
+
+    {"//" : "№5, категория – статистический контроль, метка приоритета=FFН"},
+    "wiretap-add 9 subscriber private -n 0724 statistic ff",
+
+    {"//" : "№6, тип объекта-01Н"},
+    "wiretap-del 2 subscriber private -n 0724",
+    
+    {"//" : "№6, тип объекта-02Н"},
+    "wiretap-del 3 network-full city -n 7454000",
+
+    {"//" : "№6, тип объекта-12Н"},
+    "wiretap-del 4 network-short city -n 7454000",
+
+    {"//" : "№6, тип объекта-03Н (для транзитного и оконечно-транзитного узла связи)"},
+    "wiretap-del 5 trunk none -t 2",
+
+    {"//" : "№6, тип объекта-03Н (для оконечного узла связи)"},
+    "wiretap-del 5 trunk private -t 2",
+
+    {"//" : "№6, признак номера-07Н"},
+
+    {"//" : "№6, неопределенный в ТТ к каналам  тип объекта"},
+    "wiretap-del 6 4 private -n 0725",
+
+    {"//" : "№6, признак номера не соответствует  №тлф"},
+    "wiretap-del 6 subscriber city -n 0725",
+
+    {"//" : "№6, тип объекта не соответствует  №тлф"},
+    "wiretap-del 6 network-full private -n 0725",
+
+    {"//" : "№6, кол-во знаков №тлф не соответствует указанному в 5 байте"},
+    "wiretap-del 6 subscriber private -n 0725f"
+]
+

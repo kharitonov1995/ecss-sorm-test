@@ -1,0 +1,18 @@
+{application, ecss_sorm_test,
+[
+    {description, "SORM test application"},
+    {vsn, "semver"},
+    {registered, []},
+    {applications, [
+        ion,
+        jsx,
+        async,
+        kernel,
+        stdlib,
+        chronica,
+        eltex_stdlib,
+        timer_container_lib
+    ]},
+    {mod, {ecss_sorm_test_app, []}},
+    {env, []}
+]}.

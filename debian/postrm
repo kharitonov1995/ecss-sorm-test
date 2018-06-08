@@ -1,0 +1,27 @@
+#!/bin/bash -e
+
+. /usr/share/debconf/confmodule
+
+#DEBHELPER#
+
+ case "${1}" in
+     remove)
+         echo "ecss-sorm-test: remove"
+         rm -rf /var/lib/ecss/ecss-sorm-test/ || true
+         rm -rf /usr/lib/ecss/ecss-sorm-test/log/ || true
+         rm -rf ~/ecss-sorm-test/ || true
+         ;;
+     purge)
+         echo "ecss-sorm-test: purge"
+         rm -rf /var/log/ecss/ecss-sorm-test/ || true
+         rm -rf /var/cache/ecss/ecss-sorm-test/ || true
+         db_purge || true
+         ;;
+     upgrade|failed-upgrade|disappear|abort-install|abort-upgrade)
+         false
+         ;;
+     *)
+         ;;
+ esac
+
+exit 0

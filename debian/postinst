@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+. /usr/share/debconf/confmodule
+
+chmod 777 /var/log/ecss/ecss-sorm-test/
+chmod 777 /var/cache/ecss/ecss-sorm-test/
+chmod 777 /var/lib/ecss/ecss-sorm-test/
+
+#DEBHELPER#
+
+exit 0
