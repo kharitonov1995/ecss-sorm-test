@@ -8,7 +8,15 @@ APP_NAME=ecss-sorm-test
 RELX_ARG=console
 
 function usage() {
-    echo "Usage: ecss-sorm-test -id Id -p | -password Password -ip Ip -m | -mode Mode -f | -file File -fo | -formatter"
+    echo "Usage: ecss-sorm-test -id Id -p | -password Password -ip Ip -m | -mode Mode -f | -file File -ex | -extend"
+    echo "Mode: shell | script"
+}
+function get_full_path { 
+   if [[ -f $1 ]];then 
+        export FILE=$(cd $(dirname $1) && pwd)/$(basename $1)
+   else 
+        echo "File not found" >&2 
+   fi 
 }
 
 # Парсим все доступные аргументы
@@ -26,11 +34,11 @@ while [[ "$*" ]]; do
                 export MODE=${2}
             fi ;;
         -file | -f)
-            export FILE=${PWD}/${2} ;;
+            get_full_path ${2} ;;
         -password | -p)
             export PASSWORD=${2} ;;
-        -formatter | -fo)
-            export FORMATTER="true" ;;
+        -extend | -ex)
+            export EXTEND="true" ;;
     esac
     shift 1
 done
